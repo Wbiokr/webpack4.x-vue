@@ -1,0 +1,151 @@
+// 定位属性
+.p-r
+  position: relative
+.p-a
+  position absolute
+.p-f
+  position fixed
+.p-s
+  position static
+
+// 权重属性
+.z-1
+  z-index 1
+.z-5
+  z-index 5
+.z-10
+  z-index 10
+.z-15
+  z-index 15
+.z-20
+  z-index 20
+.z-100
+  z-index 100
+.z-200
+  z-index 200
+.z-1000
+  z-index 1000
+.z-10000
+  z-index 10000
+.z-max
+  z-index 10001
+.top-10-reverse
+  top -10px!important
+
+// 位置属性-单元
+.p-l-0
+  left 0
+.p-l-32
+  left 32px
+.p-l-50
+  left 50%
+.p-r-0
+  right 0
+.p-r-50
+  right 50%
+.p-t-0
+  top 0
+.p-t-36
+  top 36px
+.p-t-50
+  top 50%
+.p-b-0
+  bottom 0
+.p-b-96
+  bottom 96px
+.p-b-50
+  bottom 50%
+.p-translate-50
+  transform: translate(-50%,-50%)
+.p-translateX-50
+  transform: translateX(-50%)
+.p-translateY-50
+  transform: translateY(-50%)
+
+// 位置属性-综合-absolute
+.p-a-c //----absolute双向居中
+  @extend .p-a
+  @extend .p-l-50
+  @extend .p-t-50
+  @extend .p-translate-50
+
+.p-a-xl-yc
+  @extend .p-a
+  @extend .p-l-0
+  @extend .p-t-50
+  @extend .p-translateY-50
+.p-a-xr-yc
+  @extend .p-a
+  @extend .p-r-0
+  @extend .p-t-50
+  @extend .p-translateY-50
+.p-a-xc-yt
+  @extend .p-a
+  @extend .p-l-50
+  @extend .p-t-0
+  @extend .p-translateX-50
+.p-a-xc-yb
+  @extend .p-a
+  @extend .p-l-50
+  @extend .p-b-0
+  @extend .p-translateX-50
+.p-a-xl-yt
+  @extend .p-a
+  @extend .p-l-0
+  @extend .p-t-0
+.p-a-xl-yb
+  @extend .p-a
+  @extend .p-l-0
+  @extend .p-b-0
+.p-a-xr-yt
+  @extend .p-a
+  @extend .p-r-0
+  @extend .p-t-0
+.p-a-xr-yb
+  @extend .p-a
+  @extend .p-r-0
+  @extend .p-b-0
+
+// 绝对定位
+.p-f-c //----absolute双向居中
+  @extend .p-f
+  @extend .p-l-50
+  @extend .p-t-50
+  @extend .p-translate-50
+
+.p-f-xl-yc
+  @extend .p-f
+  @extend .p-l-0
+  @extend .p-t-50
+  @extend .p-translateY-50
+.p-f-xr-yc
+  @extend .p-f
+  @extend .p-r-0
+  @extend .p-t-50
+  @extend .p-translateY-50
+.p-f-xc-yt
+  @extend .p-f
+  @extend .p-l-50
+  @extend .p-t-0
+  @extend .p-translateX-50
+.p-f-xc-yb
+  @extend .p-f
+  @extend .p-l-50
+  @extend .p-b-0
+  @extend .p-translateX-50
+.p-f-xl-yt
+  @extend .p-f
+  @extend .p-l-0
+  @extend .p-t-0
+.p-f-xl-yb
+  @extend .p-f
+  @extend .p-l-0
+  @extend .p-b-0
+.p-f-xr-yt
+  @extend .p-f
+  @extend .p-r-0
+  @extend .p-t-0
+.p-f-xr-yb
+  @extend .p-f
+  @extend .p-r-0
+  @extend .p-b-0

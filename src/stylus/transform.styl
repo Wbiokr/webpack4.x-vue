@@ -1,0 +1,106 @@
+.scale-50
+  transform: scale(0.5)
+.scale-80
+  transform: scale(.8)
+.scale-100
+  transform: scale(1)
+
+.scale-10-active:active
+  transform: scale(.1)
+.translateX-per-100
+  transform: translateX(100%)
+.translateX-per-100-reverse
+  transform: translateX(-100%)
+.translateX-per-50
+  transform: translateX(50%)
+.translateX-per-50-reverse
+  transform: translateX(-50%)
+.translateX-100-reverse
+  transform: translateX(-100px)
+
+.translateX-50
+  transform: translateX(50px)
+.translateX-50-reverse
+  transform: translateX(-50px)
+
+.translateY-100
+  transform: translateY(100%)
+.translateY-100-reverse
+  transform: translateY(-100%)
+.translate-100-reverse
+  transform: translateX(-70%) translateY(-100%)
+
+
+.ease-300
+  transition: all ease .3s
+.ease-400
+  transition all ease .4s
+.ease-500
+  transition all ease .5s
+
+.rotate-45
+  transform: rotate(45deg)
+.rotate-90
+  transform: rotate(90deg)
+
+.shadow-app
+  box-shadow:0px 0px 20px 0px rgba(28,113,183,0.1);
+
+.shadow-search
+  // box-shadow:0px 5px 5px 0px rgba(0,0,0,0.3);
+  box-shadow:  0 2px 8px rgba(0, 0, 0, 0.15)
+.shadow-gray
+  box-shadow:0px 4px 8px 0px rgba(0,0,0,0.1);
+
+.down-enter-active{
+  transition: all ease .4s;
+  transition-delay:.2s; 
+}
+.down-leave-active{
+  
+  transition:all ease .2s;
+}
+.down-enter{
+    opacity: 0;
+    margin-top: -20px
+    // transform: translateY(-90px)
+}
+.down-leave-to{
+  opacity 0
+  // margin-top -30px
+}
+
+.fade-enter-active{
+  transition: all ease .4s;
+  transition-delay:.2s; 
+}
+.fade-leave-active{
+  
+  transition:all ease .2s;
+}
+.fade-enter{
+    opacity: 0;
+    // transform: translateY(10%)
+    // transform: translateY(30%)
+    // margin-top: -20px
+    // transform: translateY(-90px)
+}
+// .fade-leave-to{
+//   opacity 0
+//   // margin-top -30px
+// }
+
+.hide-enter-active,.hide-leave-active{
+  transition: all ease .35s;
+}
+.hide-enter,.hide-leave-to{
+  opacity: 0;  
+  transform: translateY(-50%) translateX(50%) scaleY(0) scaleX(0)
+  // width:0!important;
+  overflow hidden;
+}
+
+
+.arraw-bottom
+  @extend .rotate-90
+  @extend .scale-50

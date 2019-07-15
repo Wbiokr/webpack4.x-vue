@@ -1,0 +1,117 @@
+.d-b
+  display block
+.d-i
+  display inline
+.d-i-b
+  display: inline-block
+.d-f
+  display: flex
+.d-n
+  display:none
+.d-f-t
+  display: flex !important
+
+//是否换行
+.d-f-w
+   flex-wrap wrap
+
+// justify方向
+.justify-c
+  justify-content: center
+.justify-s
+  justify-content: flex-start
+.justify-e
+  justify-content: flex-end
+.justify-a
+  justify-content: space-around
+.justify-b
+  justify-content: space-between
+
+// align方向
+.align-c
+  align-items : center
+.align-s
+  align-items:  flex-start
+.align-e
+  align-items:  flex-end
+.align-a
+  align-items:  space-around
+.align-b
+  align-items:  space-between
+
+// 水平、垂直方向集合
+.f-c
+  @extend .d-f
+  @extend .justify-c
+  @extend .align-c
+
+.f-c-s
+  @extend .d-f
+  @extend .justify-c
+  @extend .align-s
+
+.f-c-e
+  @extend .d-f
+  @extend .justify-c
+  @extend .align-e
+
+.f-c-b
+  @extend .d-f
+  @extend .justify-c
+  @extend .align-b
+
+.f-s-c
+  @extend .d-f
+  @extend .justify-s
+  @extend .align-c
+
+
+.f-e-c
+  @extend .d-f
+  @extend .justify-e
+  @extend .align-c
+
+.f-b-b
+  @extend .d-f
+  @extend .justify-b
+  @extend .align-b
+
+.f-b-c
+  @extend .d-f
+  @extend .justify-b
+  @extend .align-c
+
+.f-a-c
+  @extend .d-f
+  @extend .justify-a
+  @extend .align-c
+
+
+
+
+// 方向
+.f-column
+  @extend .d-f
+  flex-direction: column
+
+// 占比
+.f-1
+  flex 1
+.f-2
+  flex 2
+.f-4
+  flex 4
+.f-6
+  flex 6
+.f-8
+  flex 8
+.f-10
+  flex 10
+
+
+.f-wrap-warp
+  flex-wrap wrap
+.f-wrap-nowarp
+  flex-wrap nowrap
+.f-wrap-reverse
+  flex-wrap wrap-reverse

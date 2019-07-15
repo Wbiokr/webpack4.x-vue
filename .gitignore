@@ -1,0 +1,9 @@
+/config
+/dist
+/index.html
+/node_modules
+/.yarn
+/package-lock.json
+# "webpack": "^4.29.6",
+#     "webpack-cli": "^3.3.0",
+#     "webpack-dev-server": "^3.2.1",

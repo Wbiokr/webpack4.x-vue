@@ -1,0 +1,91 @@
+// 会生成数组中的margin-top、margin-bottom、margin-left、margin-right等类
+/*
+  $range-margin,中每一个数字都会生产该数字下的7个类名，用继承性，机会不用担心冗余
+  如数字5下7个类名分别为：
+  .m-t-5{margin-top:5px}
+  .m-b-5{margin-bottom:5px}
+  .m-l-5{margin-left:5px}
+  .m-r-5{margin-right:5px}
+  .m-tb-5{margin-top:5px;margin-bottom:5px;}
+  .m-lr-5{margin-left:5px;margin-right:5px;}
+  .m-5{margin-top:5px;margin-bottom:5px;margin-left:5px;margin-right:5px;}
+
+*/ 
+.m-no-b
+  margin-bottom 0
+.m-c
+  margin 0 auto
+
+// 注意：最后一位数不要加逗号
+
+$range-margin = 0,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                20,
+                22,
+                24, 
+                25,
+                26,
+                30,
+                32,
+                33,
+                35, 
+                40, 
+                45, 
+                50, 
+                55, 
+                60, 
+                65, 
+                70, 
+                75, 
+                80, 
+                85,
+                86,
+                90, 
+                95,
+                96,
+                100,
+                110,
+                120, 
+                160,
+                200,
+                340
+                // 440
+
+
+for margin in $range-margin
+  .m-t-{margin}
+    margin-top (margin)px!important
+  .m-l-{margin}
+    margin-left (margin)px!important
+  .m-b-{margin}
+    margin-bottom (margin)px!important
+  .m-r-{margin}
+    margin-right (margin)px!important
+  .m-tb-{margin}
+    @extend .m-t-{margin}
+    @extend .m-b-{margin}
+  .m-lr-{margin}
+    @extend .m-l-{margin}
+    @extend .m-r-{margin}
+  .m-{margin}
+    @extend .m-t-{margin}
+    @extend .m-b-{margin}
+    @extend .m-l-{margin}
+    @extend .m-r-{margin}
+
+.m-c,.m-a
+  width 1200px
+  margin 0 auto

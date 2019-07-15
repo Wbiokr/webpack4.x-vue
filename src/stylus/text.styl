@@ -1,0 +1,60 @@
+.t-c
+  text-align center
+.t-l
+  text-align left
+.t-r
+  text-align right
+
+.t-i-2
+  text-indent: 2em
+  
+//英文大写
+.t-t-u
+  text-transform:uppercase
+// 單行省略號
+.white-1{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap
+}
+//两行省略号
+.white-2{
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: keep-all;
+    word-wrap: break-word; 
+}
+.white-4{
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    word-break: keep-all;
+    word-wrap: break-word; 
+}
+//三行省略号
+.ellipse-3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+// cursor屬性部分
+.c-p
+  cursor pointer
+.c-a
+  cursor auto
+.c-n
+  cursor not-allowed
+.c-d
+  cursor default

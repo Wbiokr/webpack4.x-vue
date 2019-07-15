@@ -1,0 +1,100 @@
+// 其他没有的范围可自行添加，如.f-s-50
+
+
+// 设置font-family: 形式 --- .f-f-simSun .f-f-simHei
+$family = simSun,
+          simHei,
+          MiscroSoft,
+          PingFangSC-Regular,
+          PingFangSC-Semibold,
+          Roboto-Bold,
+          Roboto-Regular,
+          STHeitiSC-Medium,
+          STHeitiSC-Light,
+          ArialMT,
+          Arial-BoldMT
+
+for family in $family 
+  .f-f-{family}
+    font-family family
+
+// 设置font-bold: 形式 --- .f-w-600 .f-w-400
+$bold = 400,
+        500,
+        600,
+        700,
+        800,
+        900
+
+for bold in $bold
+  .f-w-{bold}
+    font-weight bold
+
+// 设置font-size: 形式 --- .f-s-12 .f-s-14 .f-s-20
+$size = 12,
+        14,
+        16,
+        18,
+        20,
+        21,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        40,
+        48,
+        60
+
+for size in $size
+  .f-s-{size} 
+    font-size (size)px
+
+// 字色相关
+.c-000
+  color #000
+.c-333
+  color #333!important
+.c-666
+  color #666666!important
+.c-999
+  color #999
+.c-aaa
+  color #aaa
+.c-ccc
+  color #ccc
+.c-eee
+  color #eee
+.c-fff
+  color #fff
+.c-fff-80
+  color rgba(#fff,.8)
+.c-fff-70
+  color rgba(#fff,.7)
+.c-fff-50
+  color rgba(#fff,.5)
+
+.c-fff-hover:hover
+  color #fff!important
+.c-blue-hover:hover
+  color #1C71B7!important
+.c-red-hover:hover
+  color #C63639!important
+
+.c-1C71B7,.c-blue
+  color #1C71B7
+.c-C63639,.c-red
+  color: #C63639
+.c-32BA59
+  color: #32BA59
+.c-F7B55E
+  color: #F7B55E
+.c-5090C3
+  color #5090C3
+.c-n
+  cursor:not-allowed
+

@@ -1,0 +1,97 @@
+// 会生成数组中的padding-top、padding-bottom、padding-left、padding-right等类
+/*
+  $range-padding,中每一个数字都会生产该数字下的7个类名，用继承性，机会不用担心冗余
+  如数字5下7个类名分别为：
+  .p-t-5{padding-top:5px}
+  .p-b-5{padding-bottom:5px}
+  .p-l-5{padding-left:5px}
+  .p-r-5{padding-right:5px}
+  .p-tb-5{padding-top:5px;padding-bottom:5px;}
+  .p-lr-5{padding-left:5px;padding-right:5px;}
+  .p-5{padding-top:5px;padding-bottom:5px;padding-left:5px;padding-right:5px;}
+
+*/ 
+
+// 注意：最后一位数不要加逗号
+
+$range-padding= 2,
+                3,
+                5,
+                7,
+                8,
+                10,
+                12,
+                13,
+                15,
+                16,
+                19, 
+                20,
+                23,
+                24,
+                25,
+                28,
+                30,
+                31,
+                32,
+                35,
+                36, 
+                40, 
+                45, 
+                50, 
+                55, 
+                60, 
+                65, 
+                70, 
+                75, 
+                80,
+                90,
+                100,
+                110,
+                150,
+                180,
+                200,
+                260,
+                310,
+                350,
+                360,
+                410
+
+
+for padding in $range-padding
+  .p-t-{padding}
+    padding-top (padding)px
+  .p-l-{padding}
+    padding-left (padding)px
+  .p-b-{padding}
+    padding-bottom (padding)px
+  .p-r-{padding}
+    padding-right (padding)px
+  .p-tb-{padding}
+    @extend .p-t-{padding}
+    @extend .p-b-{padding}
+  .p-lr-{padding}
+    @extend .p-l-{padding}
+    @extend .p-r-{padding}
+  .p-{padding}
+    @extend .p-t-{padding}
+    @extend .p-b-{padding}
+    @extend .p-l-{padding}
+    @extend .p-r-{padding}
+
+.p-no-t
+  padding-top 0!important
+.p-no-b
+  padding-bottom 0!important
+.p-no-l
+  padding-left 0!important
+.p-no-r
+  padding-right: 0!important
+.p-no-tb
+  @extend .p-no-t
+  @extend .p-no-b
+.p-no-lr
+  @extend .p-no-l
+  @extend .p-no-r
+.p-no
+  @extend .p-no-lr
+  @extend .p-no-tb
