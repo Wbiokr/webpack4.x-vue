@@ -27,16 +27,16 @@ module.exports = {
   },
   resolve:{
     extensions:['.js','.vue','json'],
-    // alias:{
-    //   '@':resolve('src'),
-    //   '$':resolve('src/components'),
-    //   '*':resolve('src/utils'),
-    // },
     alias:{
-      '@@':resolve('src'),
-      '@':resolve('src/components'),
-      '*':resolve('src'),
+      '@':resolve('src'),
+      '$':resolve('src/components'),
+      '*':resolve('src/utils'),
     },
+    // alias:{
+    //   '@@':resolve('src'),
+    //   '@':resolve('src/components'),
+    //   '*':resolve('src'),
+    // },
     modules:[
       resolve('src'),
       resolve('node_modules'),
@@ -58,13 +58,13 @@ module.exports = {
         test:/\.vue/,
         include:resolve('src'),
         // use:'happypack/loader?id=vue',
-        use:['cache-loader',{
-          loader:'vue-loader',
+        use:[require.resolve('cache-loader'),{
+          loader:require.resolve('vue-loader'),
         }]
       },
-      newStyleLoader('styl',"stylus-loader"),
+      newStyleLoader('styl',require.resolve("stylus-loader")),
       newStyleLoader('less'),
-      newStyleLoader('scss','sass-loader'),
+      newStyleLoader('scss',require.resolve('sass-loader')),
       newStyleLoader('css'),
       {
         test:/\.(js|jsx)?$/,
@@ -74,7 +74,7 @@ module.exports = {
         ),
         include:resolve('src'),
         // use:'happypack/loader?id=js'
-        loader:'babel-loader',
+        loader:require.resolve('babel-loader'),
       },
       {
         test: /\.(pug|jade)$/,
@@ -83,11 +83,11 @@ module.exports = {
         oneOf: [
           {
             resourceQuery: /^\?vue/,
-            use: ['pug-plain-loader']
+            use: [require.resolve('pug-plain-loader')]
             // use: 'happypack/loader?id=plain'
           },
           {
-            use: ['raw-loader', 'pug-plain-loader']
+            use: ['raw-loader', require.resolve('pug-plain-loader')]
             // use: 'happypack/loader?id=pug'
           }
         ]

@@ -13,7 +13,7 @@ module.exports = (type,loader) => {
       options:{
         publicPath:resolve('dist/css')
       }
-    } : 'vue-style-loader',
+    } : require.resolve('vue-style-loader'),
     {
       loader:'css-loader',
     },
