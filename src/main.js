@@ -1,6 +1,5 @@
 import App from './App';
 import router from './router.config';
-import 'babel-polyfill';
 import './utils/config'
 
 // import Store from './store/'

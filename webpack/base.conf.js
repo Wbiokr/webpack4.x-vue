@@ -26,7 +26,7 @@ module.exports = {
     filename:`js/[name].${version}.js`,
   },
   resolve:{
-    extensions:['.js','.vue','json'],
+    extensions:['.js','.vue','.json','.ts'],
     alias:{
       '@':resolve('src'),
       '$':resolve('src/components'),
@@ -92,6 +92,20 @@ module.exports = {
           }
         ]
       },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        loader: 'tslint-loader'
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        }
+      },
       newFileLoader('img',version),
       newFileLoader('media',version),
       newFileLoader('fonts',version),
@@ -129,9 +143,10 @@ module.exports = {
       style:`${isPro?"/dist":""}/css/app.${version}.css`,
       config:'/static/config.js?version='+version,
       moment:'/static/lib/moment.js',
-      vue:'/static/lib/vue.min.js',
-      vuex:'/static/lib/vuex.min.js',
-      router:'/static/lib/vue-router.min.js',
+      polyfill:'/static/lib/polyfill.min.js',
+      vue:`/static/lib/vue${isPro?".min":""}.js`,
+      vuex:`/static/lib/vuex${isPro?".min":""}.js`,
+      router:`/static/lib/vue-router${isPro?".min":""}.js`,
       config:'/static/config.js',
       script:`${isPro?"/dist":""}/js/App.${version}.js`,
       ico:'/static/favicon.ico',
