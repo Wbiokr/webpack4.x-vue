@@ -18,7 +18,7 @@ module.exports = {
     maxAssetSize:2000000,
   },
   entry:{
-    App:resolve(`src/main.js`)
+    App:resolve(`src/main.ts`)
   },
   output:{
     path:resolve('dist'),
@@ -77,6 +77,19 @@ module.exports = {
         loader:require.resolve('babel-loader'),
       },
       {
+        test: /\.(vue.ts|ts|tsx)$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        use: [
+            {
+                loader: 'vue-tslint-loader',
+                options: { 
+                  tsConfigFile: 'tsconfig.json'
+                  /* Loader options go here */ }
+            }
+        ]
+      },
+      {
         test: /\.(pug|jade)$/,
         include: resolve('src'),
         exclude:/node_modules/,
@@ -92,12 +105,12 @@ module.exports = {
           }
         ]
       },
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        enforce: 'pre',
-        loader: 'tslint-loader'
-      },
+      // {
+      //   test: /\.ts$/,
+      //   exclude: /node_modules/,
+      //   enforce: 'pre',
+      //   loader: 'tslint-loader'
+      // },
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
@@ -137,13 +150,15 @@ module.exports = {
     // }),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      filename: isPro ? resolve('index.html') : 'index.html',
+      filename: process.env.theme == 1 ? resolve('theme/index.html') : isPro ? resolve('index.html') :  'index.html',
       template: path.resolve('static/index.html'),
       inject: false,
       style:`${isPro?"/dist":""}/css/app.${version}.css`,
       config:'/static/config.js?version='+version,
       moment:'/static/lib/moment.js',
       polyfill:'/static/lib/polyfill.min.js',
+      ant:`/static/lib/antd${isPro?".min":""}.js`,
+      antCSS:`/static/lib/antd.min.css`,
       vue:`/static/lib/vue${isPro?".min":""}.js`,
       vuex:`/static/lib/vuex${isPro?".min":""}.js`,
       router:`/static/lib/vue-router${isPro?".min":""}.js`,

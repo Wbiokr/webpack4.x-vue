@@ -4,8 +4,9 @@
   "description": "wbiokr@hotmail.com",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config webpack/dev.conf.js",
-    "build": "cross-env NODE_ENV=production node webpack/pro.conf.js --progress",
+    "start": "cross-env NODE_ENV=development theme=0 webpack-dev-server --inline --progress --config webpack/dev.conf.js",
+    "build": "cross-env NODE_ENV=production theme=0  node webpack/pro.conf.js --progress",
+    "theme": "cross-env NODE_ENV=production theme=1 node webpack/theme.conf.js --progress",
     "dev": "npm start"
   },
   "author": "陈博先wbiokr@hotmail.com",
@@ -51,12 +52,13 @@
     "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
     "tslint-config-standard": "^8.0.1",
-    "tslint-loader": "^3.5.4",
+    "tslint-loader": "^3.5.3",
     "typescript": "^3.5.3",
     "url-loader": "^2.0.1",
     "vue-loader": "^15.7.0",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10",
+    "vue-tslint-loader": "^3.5.6",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2",
@@ -73,7 +75,9 @@
     "vue-class-component": "^7.1.0",
     "vue-clipboard2": "^0.3.0",
     "vue-property-decorator": "^8.2.1",
+    "vue-router": "^3.0.7",
     "vuescroll": "^4.13.1",
+    "vuex": "^3.1.1",
     "whatwg-fetch": "^3.0.0"
   },
   "browserslist": [

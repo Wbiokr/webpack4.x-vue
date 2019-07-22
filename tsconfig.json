@@ -1,6 +1,7 @@
 {
   "include": [
-    "src/**/*"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
   "exclude": [
     "node_modules"
@@ -12,13 +13,19 @@
     "module": "esnext",
     "target": "es5",
     "moduleResolution": "node",
-    "isolatedModules": true,
+    "isolatedModules": false,
     "lib": [
       "dom",
       "es5",
       "es2015.promise"
     ],
     "sourceMap": true,
-    "pretty": true
+    "pretty": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
   }
 }

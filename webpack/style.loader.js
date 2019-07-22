@@ -27,7 +27,17 @@ module.exports = (type,loader) => {
     }
   ];
 
-  type !== 'css' && use.push(loader || `${type}-loader`) ;
+  if(type=='less'){
+    use.push({
+      loader:require.resolve('less-loader'),
+      options:{
+        javascriptEnabled:true
+      }
+    })
+  }else{
+
+    type !== 'css' && use.push(loader || `${type}-loader`) ;
+  }
 
   const config = {
     test: type === 'css' ? /\.css$/ : type === 'less' ? /\.less$/ : type === 'scss' ? /\.(scss|sass)$/ : /\.styl(us)?$/ ,

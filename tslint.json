@@ -1,6 +1,30 @@
 {
-  "extends": "tslint-config-standard",
-  "globals": {
-    "require": true
+  "defaultSeverity": "warnings",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  },
+  "rules": {
+    "align":false,
+    "quotemark": [true, "single"],
+    "indent": [true, "spaces", 2],
+    "interface-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": true,
+    "forin":false,
+    "semicolon":false,
+    "whitespace":[true,"check-branch","check-separator","check-rest-spread","check-type-operator","check-preblock","check-postbrace"],
+    "no-angle-bracket-type-assertion":false,
+    "no-parameter-reassignment":false,
+    "no-construct":false,
+    "no-unused-expression":false,
+    "no-bitwise":false,
+    "max-classes-per-file":false
   }
 }
+

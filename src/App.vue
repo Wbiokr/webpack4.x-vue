@@ -1,27 +1,44 @@
-<template>
-  <router-view></router-view>
+<template lang='pug'>
+  div
+    header 头部
+    main
+      router-view
 </template>
 <script lang="ts">
-import Vue from 'vue'
-import Component from 'vue-class-component'
-
+import Vue from "vue";
+import Component from "vue-class-component";
 @Component
 export default class App extends Vue {
-  msg = 123
+  msg: any = 123
 
   // 声明周期钩子
-  mounted () {
-    this.greet()
+  mounted():void{
+    this.greet();
   }
 
+  data():Object{
+    return {
+      aaa:"fdsf"
+    }
+  }
+
+
   // 计算属性
-  get computedMsg () {
-    return 'computed ' + this.msg
+  get hello():string{
+    return "computed " + this.msg;
+  }
+
+  get World():Number{
+    return parseInt(this.msg)
   }
 
   // 方法
-  greet () {
-    alert('greeting: ' + this.msg)
+  greet():void{
+    this.msg = 'fdsafsa'
   }
 }
 </script>
+<style lang="stylus">
+div
+  background #f00
+</style>

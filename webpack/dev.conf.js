@@ -60,7 +60,7 @@ module.exports = new Promise((res,rej)=>{
       devConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo:{
           messages:[
-            chalk.cyanBright(` 构建完成，可以通过localhost:${port},获取IP进行访问！`)
+            chalk.cyanBright(` 构建完成，可以通过localhost:${port},或者IP进行访问！`)
           ]
         },
         onErrors:(severity, errors) => {

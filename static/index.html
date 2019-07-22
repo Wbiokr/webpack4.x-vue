@@ -6,20 +6,24 @@
     <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
     <meta name="format-detection" content="telephone=no" />
     <title>云译客企业版</title>
+    <link rel="stylesheet" href="" id='theme-link' />
+    <script>
+        if(navigator.appVersion.indexOf('MSIE 9.0')>-1){
+            alert('请下载高版本浏览器，已获得更好浏览体验！')
+        }
+        (function(){
+            var theme = localStorage.theme?localStorage.theme:'blue';
+            document.querySelector('#theme-link').href  ='/static/theme/antd.'+theme+'.min.css';
+        })()
+    </script>
     <link rel="shortcut icon" href="<%= htmlWebpackPlugin.options.ico %>">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1105964_2c77ognv48m.css">
-    <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.antCss %>">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1292595_3w0wc4rjant.css">
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.style %>">
     <!--[if lt IE 9]>
         <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
     　　<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <![endif]-->
-    <script src="<%= htmlWebpackPlugin.options.config %>"></script>    
-    <script>
-        if(navigator.appVersion.indexOf('MSIE 9.0')>-1){
-            alert('请下载高版本浏览器，已获得更好浏览体验！')
-        }
-    </script>
+    <script src="<%= htmlWebpackPlugin.options.config %>"></script>      
 </head>
 <body>
     <div id="app"></div>
